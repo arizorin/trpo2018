@@ -9,11 +9,21 @@
 </head>
 <body>
 <center>
-    <form action="/delete" method="post">
+    <form action="/update" method="POST">
         <label><b>Логин:</b></label>
-        <input type="text" placeholder="Логин" name="Login">
+        <input type="text" placeholder="Логин" name="Login" value="" required="true">
         <br>
-        <button type="submit" class="btn btn-success">Удалить</button>
+        <label><b>Пароль:</b></label>
+        <input type="text" placeholder="Пароль" name="Password" value="" required="true">
+        <br>
+        <label><b>Роль:</b></label>
+        <select multiple size="2" name="Role" required>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+        </select>
+        <br>
+        <button type="submit" class="btn btn-success">Изменить</button>
+
     </form>
     <br>
     <button onclick="goBack()" class="btn">Назад</button>

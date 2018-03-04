@@ -10,12 +10,15 @@ import java.io.PrintWriter;
 public class Delete extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         User user = new User();
         DAO dao = new DAO();
         user.setLogin(req.getParameter("Login"));
         dao.deleteUser(user);
         PrintWriter out = resp.getWriter();
-        out.print("Пользователь со значениями:" + req.getParameter("Login") + "был успешно удален!");
-
+        out.print("<html><body>");
+        out.print("User:" + req.getParameter("Login") + "deleted!");
+        out.print("<a href=\"javascript:history.back()\">Back</a>");
+        out.print("</body></html>");
     }
 }

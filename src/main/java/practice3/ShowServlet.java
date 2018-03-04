@@ -15,11 +15,13 @@ public class ShowServlet extends HttpServlet {
         d.show();
         out.print("<html><body>");
         out.print("<table border='1'");
-        out.print("<tr><th>LOGIN</TH><TH>PASSWORD</TH></TR>");
+        out.print("<tr><th>Password</TH><TH>Login</TH></TR>");
         System.out.println(d.getResponse());
         out.print(d.getResponse());
         out.print("</table>");
+        out.print("<a href=\"javascript:history.back()\">Back</a>");
         out.print("</body></html>");
+
     }
 
 }

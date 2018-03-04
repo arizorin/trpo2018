@@ -2,24 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Домашняя страница</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <center>
-<form action="/show" method="get">
-    <input type="submit" class="btn btn-default btn-lg" value="Показать" />
+    <table border='1'>
+        <td>
+            Практическая работа по ТРПО #3 <br> Реализовать CRUD операции для работы с пользователем.
+        </td>
+        <td>
+    <br>
+    <form action="/show" method="get">
+    <input type="submit" class="btn btn-default btn-lg" value="Показать всех пользователей" />
 </form>
     <br>
     <form action="add.html" method="POST">
-        <input type="submit" class="btn btn-default btn-lg" value="Добавить" />
+        <input type="submit" class="btn btn-default btn-lg" value="Добавить пользователя" />
+    </form>
+    <br>
+    <form action="update.html" method="get">
+        <input type="submit" class="btn btn-default btn-lg" value="Обновить пользователя" />
     </form>
     <br>
     <form action="delete.html" method="POST">
-        <input type="submit" class="btn btn-default btn-lg" value="Удалить" />
+        <input type="submit" class="btn btn-default btn-lg" value="Удалить пользователя" />
     </form>
+        </td>
+    </table >
 </center>
 </body>
 </html>
