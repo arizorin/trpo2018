@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class JsonParser {
     public static void main(String[] args) throws FileNotFoundException {
-        String path =  "src/main/resources/E05_aanderaa_all_1769_d432_5004.json";
+        String path =  "src/main/resources/practice2/E05_aanderaa_all_1769_d432_5004.json";
         FileReader br = new FileReader(path);
         JSONTokener Tokener = new JSONTokener(br);
 

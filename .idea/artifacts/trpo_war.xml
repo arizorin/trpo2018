@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="trpo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="trpo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="trpo:war exploded" />
+    </root>
+  </artifact>
+</component>
