@@ -23,8 +23,6 @@ function openSocket(){
         var e = jQuery.parseJSON( event.data );
         $("tr#waiting").hide();
         var r = "<tr><td>" + e.name + "</td><td>"+cur1.value+"</td><td>"+e.price + "</td><td>";
-        console.log(e.price + ":" + oldval);
-
         if(e.price > oldval && oldval!=0){
             r = r + "<td><img src=\"img/inc.png\" height=\"30\" width=\"30\"/></td>";
         }
@@ -35,7 +33,6 @@ function openSocket(){
         }
         oldval = e.price;
         oldcurr = cur1.value;
-        console.log(event.data);
         webSocket.send(msg)
     };
 }
