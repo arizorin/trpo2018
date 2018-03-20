@@ -10,22 +10,41 @@
 <body>
 <div class="container">
     <h1>Практическая работа №4</h1>
+    <h2>Выбор валюты</h2>
+    <hr>
+        <table class="table  table-bordered table-hover table-striped" cellpadding="5" cellspacing="5" align="center">
+            <tr>
+                <th>Вид криптовалюты</th>
+                <th>Вид валюты</th>
+            <th></th>
+            </tr>
+            <tr>
+                <td><input value="BTC" id="1" title="Валюта чей курс мы отслеживаем" required></td>
+                <td><input value="RUB" id="2" title="Валюта чей курс мы отслеживаем" required></td>
+                <td align="center"><button class="btn btn-primary btn"  onclick="openSocket()">Вывод</button></td>
+            </tr>
+        </table>
+
+    <br>
+    <h2>Живая лента</h2>
+    <hr>
     <div class="row">
         <div class="col-md-12">
-            <h2>Живая лента курса криптовалюты</h2>
             <table border="1" class="table table-bordered table-hover table-striped" id="trade_table">
                 <thead>
                 <tr>
-                    <th>Валюта</th>
                     <th>Вид криптовалюты</th>
+                    <th>Вид валюты</th>
                     <th>Курс</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
+
                 <tr id="waiting">
-                    <td colspan="6">Подключение к сокету...</td>
+                    <td colspan="6">Ожидание подключения к серверу...</td>
                 </tr>
+
                 </tbody>
             </table>
         </div>

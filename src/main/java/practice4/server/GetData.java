@@ -8,8 +8,8 @@ import java.net.URLConnection;
 
 public class GetData {
     Coin coin = new Coin();
-
-    public Coin getPrice(String crypto, String currency) throws IOException {
+//    static final String currency = "RUB";
+    public String getPrice(String crypto, String currency) throws IOException {
         URL oracle = new URL(String.format("https://min-api.cryptocompare.com/data/price?fsym=%s&tsyms=%s",crypto,currency));
         URLConnection yc = oracle.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
@@ -19,8 +19,7 @@ public class GetData {
         coin.setName(mass[0]);
         coin.setPrice(Double.valueOf(mass[1]));
         in.close();
-        coin.toString();
-        return coin;
+        return coin.toString();
     }
 
 

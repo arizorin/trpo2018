@@ -1,22 +1,28 @@
 var webSocket;
-var oldval = 0;
+var oldval  ;
 function openSocket(){
+
+    var cur1 = document.getElementsByTagName("input")[0];
+    var cur2 = document.getElementsByTagName("input")[1];
+    var msg = "price:"+cur1.value+":"+cur2.value;
     if(webSocket !== undefined && webSocket.readyState !== WebSocket.CLOSED){
-        writeResponse("WebSocket is already opened.");
-        return;
+        webSocket.close();
     }
-    webSocket = new WebSocket("ws://localhost:8080/hello");
+    if(!cur2.value.length || !cur1.value.length){
+        alert("Введите значения обеих валют!")
+    }
+    webSocket = new WebSocket("ws://localhost:8080/price");
 
     webSocket.onopen = function(event){
+        oldval = 0;
         console.log('Websocket connection open');
-        webSocket.send("price")
+        webSocket.send(msg)
     };
 
     webSocket.onmessage = function(event){
         var e = jQuery.parseJSON( event.data );
-
         $("tr#waiting").hide();
-        var r = "<tr><td>" + e.name + "</td><td>BTC</td><td>"+e.price + "</td><td>";
+        var r = "<tr><td>" + e.name + "</td><td>"+cur1.value+"</td><td>"+e.price + "</td><td>";
         console.log(e.price + ":" + oldval);
 
         if(e.price > oldval && oldval!=0){
@@ -28,9 +34,8 @@ function openSocket(){
             $("#trade_table tbody").prepend(r);
         }
         oldval = e.price;
+        oldcurr = cur1.value;
         console.log(event.data);
-        webSocket.send("price")
+        webSocket.send(msg)
     };
 }
-
-openSocket();
