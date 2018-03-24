@@ -5,14 +5,6 @@ public class Coin {
     private double price;
     private double oldprice;
 
-    public double getOldprice() {
-        return oldprice;
-    }
-
-    public void setOldprice(double oldprice) {
-        this.oldprice = oldprice;
-    }
-
     public String getName() {
         return name;
     }

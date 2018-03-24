@@ -21,6 +21,4 @@ public class GetData {
         in.close();
         return coin.toString();
     }
-
-
 }
